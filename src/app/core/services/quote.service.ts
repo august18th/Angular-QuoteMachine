@@ -16,7 +16,8 @@ export class QuoteService {
 
     getQuote(): Observable<IQuote> {
         const myHeaders: HttpHeaders = new HttpHeaders()
-            .set("Content-Type", "application/json");
+            .set("Content-Type", "application/json")
+            .set("X-Mashape-Key", "wotECOmjqNmsh0NqpP1CkBfVv4rup1FPHEAjsnnfBl50f11iUm");
         return this.http.get<IQuote>(this.baseUrl, { headers: myHeaders })
             .pipe(
                 map(quotes => {
